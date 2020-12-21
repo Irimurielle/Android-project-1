@@ -11,18 +11,20 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import butterknife.BindView;
+import butterknife.ButterKnife;
+
 public class NewNoteActivity extends AppCompatActivity {
     public static final String TAG = Activity.class.getSimpleName();
-    private EditText mNoteEditText;
-    private Button mSaveButton;
+    @BindView(R.id.editTextNewNote) EditText mNoteEditText;
+    @BindView(R.id.save_button) Button mSaveButton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_new_note);
 
-        mNoteEditText = (EditText) findViewById(R.id.editTextNewNote);
-        mSaveButton = (Button) findViewById(R.id.save_button);
+        ButterKnife.bind(this);
         mSaveButton.setOnClickListener(new View.OnClickListener() {
 
             @Override

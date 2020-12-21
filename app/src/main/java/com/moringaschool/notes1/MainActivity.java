@@ -7,6 +7,7 @@ import android.widget.ListView;
 
 public class MainActivity extends AppCompatActivity {
     private ListView mListView;
+    static String[] tasks = new String[] {"Drinking water each day at 8:00 Am", "Reading the Bible each night before going to bed"};
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

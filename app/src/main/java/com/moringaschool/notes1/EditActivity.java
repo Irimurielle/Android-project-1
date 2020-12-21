@@ -19,6 +19,5 @@ public class EditActivity extends AppCompatActivity {
         mEditText = (EditText) findViewById(R.id.editText);
         Intent intent = getIntent();
         String notes = intent.getStringExtra("notes");
-        mEditText.setText(MainActivity.notes);
     }
 }

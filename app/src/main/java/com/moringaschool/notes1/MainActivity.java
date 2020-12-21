@@ -12,7 +12,7 @@ import android.widget.ListView;
 
 public class MainActivity extends AppCompatActivity {
     private ListView mListView;
-    static String[] notes = new String[] {"Christmas Decoration"};
+    static String[] notes = new String[] {"Christmas is all about love", "Kindness is greater than anything"};
     private Button mAddButton;
 
     @Override
@@ -40,6 +40,8 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+        Intent intent = getIntent();
+        String note = intent.getStringExtra("note");
 
     }
 }

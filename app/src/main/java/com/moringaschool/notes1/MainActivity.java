@@ -9,13 +9,15 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.ListView;
+import android.widget.TextView;
+import android.widget.Toast;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
 
 public class MainActivity extends AppCompatActivity {
     @BindView(R.id.listView) ListView mListView;
-    static String[] notes = new String[] {"Christmas is all about love", "Kindness is greater than anything"};
+    static String[] notes = new String[] {"Christmas is all about love", "Kindness is greater than anything","You must understand the whole of life, not just one part of it. That is why you must read, that is why you must look at the skies, why you must sing, dance and write poems, and suffer, and understand, for all that is life","Don’t wait to fail before you open God’s Word. Instead, look to His Word first and foremost, so that you can live your life in a way that produces your ultimate good and His ultimate glory"};
     @BindView(R.id.add_button) Button mAddButton;
 
     @Override
@@ -29,9 +31,8 @@ public class MainActivity extends AppCompatActivity {
         mListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int i, long l) {
-                Intent intent = new Intent(MainActivity.this, EditActivity.class);
-                intent.putExtra("notes", notes);
-                startActivity(intent);
+                String note = ((TextView)view).getText().toString();
+                Toast.makeText(MainActivity.this, note, Toast.LENGTH_LONG).show();
             }
         });
         mAddButton.setOnClickListener(new View.OnClickListener() {
@@ -41,8 +42,6 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
-        Intent intent = getIntent();
-        String note = intent.getStringExtra("note");
 
     }
 }

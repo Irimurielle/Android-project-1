@@ -14,8 +14,9 @@ import android.widget.Toast;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 
+import static com.moringaschool.notes1.MainActivity.notes;
+
 public class NewNoteActivity extends AppCompatActivity {
-    public static final String TAG = Activity.class.getSimpleName();
     @BindView(R.id.editTextNewNote) EditText mNoteEditText;
     @BindView(R.id.save_button) Button mSaveButton;
 
@@ -30,8 +31,8 @@ public class NewNoteActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 String note = mNoteEditText.getText().toString();
-                Log.d(TAG, note);
-                Intent intent = new Intent(NewNoteActivity.this, MainActivity.class);
+                Intent intent = new Intent(NewNoteActivity.this, EditActivity.class);
+                intent.putExtra("note", note);
                 startActivity(intent);
                 Toast.makeText(NewNoteActivity.this, note, Toast.LENGTH_LONG).show();
             }

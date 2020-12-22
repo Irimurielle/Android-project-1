@@ -7,9 +7,9 @@ An android application which can be used by the user to take and store notes dur
 Murielle Iribori
 
 ## Demonstration
-(images/Screenshot_20201222-144053.png)
-(images/Screenshot_20201222-144234.png)
-(images/Screenshot_20201222-144400.png)
+![Notes](images/Screenshot_20201222-144053.png)
+![Note entry](images/Screenshot_20201222-144234.png)
+![Note display](images/Screenshot_20201222-144400.png)
 
 ## Setup instruction
 * clone the repo
